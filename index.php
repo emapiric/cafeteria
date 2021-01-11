@@ -13,14 +13,12 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="img/favicon.png">
     <title>Hearts Cafeteria</title>
 </head>
 <body>
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="img/logoNov.png" width="100px"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
         <span class="navbar-toggler-icon"></span>
         </button>
@@ -30,7 +28,7 @@
                     <a class="nav-link" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Coffee</a>
+                    <a class="nav-link" href="coffee/coffeePage.php">Coffee</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="">Orders</a>
@@ -55,9 +53,15 @@
             </div>
             <div class="carousel-item">
                 <img src="img/coffee-machine.jpg" alt="Coffee machine">
+                <div class="carousel-caption">
+                <h1 class="display-2">Hearts Cafeteria</h1>
+                </div>
             </div>
             <div class="carousel-item">
                 <img src="img/coffee.jpg" alt="Coffee">
+                <div class="carousel-caption">
+                <h1 class="display-2">Hearts Cafeteria</h1>
+                </div>
             </div>
         </div>
     </div>
