@@ -31,7 +31,7 @@
                     <a class="nav-link" href="coffee/coffeePage.php">Coffee</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Orders</a>
+                    <a class="nav-link" href="orders/ordersPage.php">Orders</a>
                 </li>
             </ul>
         </div>

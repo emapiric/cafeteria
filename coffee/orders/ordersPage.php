@@ -1,7 +1,8 @@
 
 <html>
  <head>
-  <title>Coffee</title>
+   <br>
+  <title>Orders</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
   <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
@@ -18,7 +19,6 @@
  </head>
  <body>
 
-
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="containerNavbar" colour="red">
     <div class="navbar-header">
@@ -27,12 +27,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
+      <a class="navbar-brand" href=".."><img src="../img/logoNov.png" width="100px"></a>
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav pull-right">
         <li><a href="..">Home</a></li>
-        <li><a href="#">Coffee</a></li>
-        <li class="active"><a href="../orders/ordersPage.php">Orders</a></li>
+        <li><a href="../coffee/coffeePage.php">Coffee</a></li>
+        <li class="active"><a href="#">Orders</a></li>
       </ul>
     </div>
   </div>
@@ -41,40 +42,38 @@
   <div class="container-fluid padding">
     <div class="container">
     <br>
-    <br>
-    <br>
-    <h1>Coffee Menu</h1>
-    <br>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-      <div class="row">
-        <div class="col-md-6">
-        <h3 class="panel-title">Our offer</h3>
-        </div>
-        <div class="col-md-6" align="right">
-        <button type="button" name="add_data" id="add_data" class="btn btn-success btn-xs">Add</button>
-        </div>
+      <br>
+      <br>
+      <h1>Orders</h1>
+      <br>
+   <div class="panel panel-default">
+    <div class="panel-heading">
+     <div class="row">
+      <div class="col-md-6">
+       <h3 class="panel-title">Borrowings</h3>
       </div>
+      <div class="col-md-6" align="right">
+       <button type="button" name="add_data" id="add_data" class="btn btn-success btn-xs">Add</button>
       </div>
-      <div class="panel-body">
-      <div class="table-responsive">
-        <span id="form_response"></span>
-        <table id="coffee_data" class="table table-bordered table-striped">
-        <thead>
-          <tr>
-          <td>Coffee ID</td>
-          <td>Name</td>
-          <td>Description</td>
-          <td>Price</td>
-          <td>View</td>
-          <td>Edit</td>
-          <td>Delete</td>
-          </tr>
-        </thead>
-        </table>      
-      </div>
-      </div>
+     </div>
     </div>
+    <div class="panel-body">
+     <div class="table-responsive">
+      <span id="form_response"></span>
+      <table id="orders_data" class="table table-bordered table-striped">
+       <thead>
+        <tr>
+         <td>Order ID</td>
+         <td>Coffee</td>
+         <td>Order date</td>
+         <td>View</td>
+         <td>Delete</td>
+        </tr>
+       </thead>
+      </table>      
+     </div>
+    </div>
+   </div>
     </div>
   </div>
 
@@ -108,7 +107,7 @@
 <script type="text/javascript" language="javascript" >
 $(document).ready(function(){
  
- var dataTable = $('#coffee_data').DataTable({
+ var dataTable = $('#orders_data').DataTable({
   "processing":true,
   "serverSide":true,
   "order":[],
@@ -118,25 +117,25 @@ $(document).ready(function(){
   },
   "columnDefs":[
    {
-    "targets":[0,4,5,6],
+    "targets":[0,3,4],
     "orderable":false,
    },
   ],
 
  });
 
+ //View
  $(document).on('click', '.view', function(){
-    var id = $(this).attr('id');
+    var idcoffee = $(this).attr('idcoffee');
   $.ajax({
    url:"sql/fetch_single_data.php",
    method:"POST",
-   data:{id:id},
+   data:{idcoffee:idcoffee},
    dataType:'json',
    success:function(data)
    {
-    localStorage.setItem('name', data['name']);
-    localStorage.setItem('description', data['description']);
-    localStorage.setItem('price', data['price']);
+    localStorage.setItem('coffee', data['coffee']);
+    localStorage.setItem('orderDate', data['orderDate']);
     var options = {
      ajaxPrefix:''
     };
@@ -154,16 +153,16 @@ $(document).ready(function(){
   })
  });
  
+ //Add new
  $('#add_data').click(function(){
-
   var options = {
    ajaxPrefix:''
   };
   new Dialogify('forms/add_data_form.php', options)
-   .title('Add New Coffee')
+   .title('Add New Order')
    .buttons([
     {
-     text:'Cancel',
+     text:'Cancle',
      click:function(e){
       this.close();
      }
@@ -174,12 +173,8 @@ $(document).ready(function(){
      click:function(e)
      {
       var form_data = new FormData();
-      if(!validate($('#name').val(),$('#description').val(),$('#price').val())){
-        alert("Error");
-      }
-      form_data.append('name', $('#name').val());
-      form_data.append('description', $('#description').val());
-      form_data.append('price', $('#price').val());
+      form_data.append('coffeeId', $('#coffeeId').val());
+      form_data.append('orderDate', $('#orderDate').val());
       $.ajax({
        method:"POST",
        url:'sql/insert_data.php',
@@ -206,77 +201,16 @@ $(document).ready(function(){
    ]).showModal();
  });
 
- $(document).on('click', '.update', function(){
-  var id = $(this).attr('id');
-  $.ajax({
-   url:"sql/fetch_single_data.php",
-   method:"POST",
-   data:{id:id},
-   dataType:'json',
-   success:function(data)
-   {
-    localStorage.setItem('name', data['name']);
-    localStorage.setItem('description', data['description']);
-    localStorage.setItem('price', data['price']);
-    $('#form_response').html('<div class="alert alert-danger">'+id+'</div>');
-    var options = {
-     ajaxPrefix:''
-    };
-    new Dialogify('forms/edit_data_form.php', options)
-     .title('Edit Coffee Data')
-     .buttons([
-      {
-       text:'Cancel',
-       click:function(e){
-        this.close();
-       }
-      },
-      {
-       text:'Edit',
-       type:Dialogify.BUTTON_PRIMARY,
-       click:function(e)
-       {
-        var form_data = new FormData();
-        form_data.append('name', $('#name').val());
-        form_data.append('description', $('#description').val());
-        form_data.append('price', $('#price').val());
-        form_data.append('id', id);
-        $.ajax({
-         method:"POST",
-         url:'sql/update_data.php',
-         data:form_data,
-         dataType:'json',
-         contentType:false,
-         cache:false,
-         processData:false,
-         success:function(data)
-         {
-          if(data.error != '')
-          {
-           $('#form_response').html('<div class="alert alert-danger">'+data.error+'</div>');
-          }
-          else
-          {
-           $('#form_response').html('<div class="alert alert-success">'+data.success+'</div>');
-           dataTable.ajax.reload();
-          }
-         }
-        });
-       }
-      }
-     ]).showModal();
-   }
-  })
- });
 
+ //Delete
  $(document).on('click', '.delete', function(){
-  var id = $(this).attr('id');
+  var idcoffee = $(this).attr('idcoffee');
   Dialogify.confirm("<h3 class='text-danger'><b>Are you sure you want to remove this data?</b></h3>", {
    ok:function(){
     $.ajax({
      url:"sql/delete_data.php",
      method:"POST",
-     data:{id:id},
+     data:{idcoffee:idcoffee},
      success:function(data)
      {
       Dialogify.alert('<h3 class="text-success text-center"><b>Data has been deleted</b></h3>');
@@ -289,27 +223,7 @@ $(document).ready(function(){
    }
   });
  });
-
- function validate(name, description, price){
-
-    if(name.len != '' && description != '' && price != ''){
-        if(priceCheck(price)){
-        return true;
-        }
-    }
-    else{
-      return false;
-    }
-  }
-
-  function priceCheck(price){
-    if(isNaN(parseInt(price))){
-        if(price<0){
-        return false;
-        }
-    }
-    return true;
-  }
-
+ 
+ 
 });
 </script>
