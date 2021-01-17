@@ -12,7 +12,7 @@ class Orders implements JsonSerializable
 
     public function jsonSerialize() {
         return array(
-            'coffeeId' => $this->coffeeId,
+            'coffee' => $this->coffeeId,
             'orderDate' => $this->orderDate,
        );
     } 

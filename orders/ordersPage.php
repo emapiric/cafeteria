@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script src="https://www.jqueryscript.net/demo/Dialog-Modal-Dialogify/dist/dialogify.min.js"></script>
-  <script type="text/javascript" src="editRecords.js"></script>
  
 
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
@@ -27,7 +26,6 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href=".."><img src="../img/logoNov.png" width="100px"></a>
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav pull-right">
@@ -50,7 +48,7 @@
     <div class="panel-heading">
      <div class="row">
       <div class="col-md-6">
-       <h3 class="panel-title">Borrowings</h3>
+       <h3 class="panel-title">Orders</h3>
       </div>
       <div class="col-md-6" align="right">
        <button type="button" name="add_data" id="add_data" class="btn btn-success btn-xs">Add</button>
@@ -124,13 +122,12 @@ $(document).ready(function(){
 
  });
 
- //View
  $(document).on('click', '.view', function(){
-    var idcoffee = $(this).attr('idcoffee');
+    var orderId = $(this).attr('orderId');
   $.ajax({
    url:"sql/fetch_single_data.php",
    method:"POST",
-   data:{idcoffee:idcoffee},
+   data:{orderId:orderId},
    dataType:'json',
    success:function(data)
    {
@@ -162,7 +159,7 @@ $(document).ready(function(){
    .title('Add New Order')
    .buttons([
     {
-     text:'Cancle',
+     text:'Cancel',
      click:function(e){
       this.close();
      }
@@ -202,28 +199,28 @@ $(document).ready(function(){
  });
 
 
- //Delete
- $(document).on('click', '.delete', function(){
-  var idcoffee = $(this).attr('idcoffee');
-  Dialogify.confirm("<h3 class='text-danger'><b>Are you sure you want to remove this data?</b></h3>", {
-   ok:function(){
-    $.ajax({
-     url:"sql/delete_data.php",
-     method:"POST",
-     data:{idcoffee:idcoffee},
-     success:function(data)
-     {
-      Dialogify.alert('<h3 class="text-success text-center"><b>Data has been deleted</b></h3>');
-      dataTable.ajax.reload();
-     }
-    })
-   },
-   cancel:function(){
-    this.close();
-   }
-  });
+//  //Delete
+//  $(document).on('click', '.delete', function(){
+//   var idcoffee = $(this).attr('idcoffee');
+//   Dialogify.confirm("<h3 class='text-danger'><b>Are you sure you want to remove this data?</b></h3>", {
+//    ok:function(){
+//     $.ajax({
+//      url:"sql/delete_data.php",
+//      method:"POST",
+//      data:{idcoffee:idcoffee},
+//      success:function(data)
+//      {
+//       Dialogify.alert('<h3 class="text-success text-center"><b>Data has been deleted</b></h3>');
+//       dataTable.ajax.reload();
+//      }
+//     })
+//    },
+//    cancel:function(){
+//     this.close();
+//    }
+//   });
+//  });
+ 
+ 
  });
- 
- 
-});
 </script>
