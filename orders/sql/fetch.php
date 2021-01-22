@@ -3,7 +3,7 @@
 include('../../database_connection.php');
 $query = '';
 $output = array();
-$query .= "SELECT orders.orderId as OrderId, coffee.name as Coffee, orders.orderDate as OrderDate 
+$query .= "SELECT orders.orderId as orderId, coffee.name as coffee, orders.orderDate as orderDate 
 FROM orders JOIN coffee ON orders.coffeeId = coffee.coffeeId";
 
 
@@ -26,17 +26,17 @@ $filtered_rows = $statement->rowCount();
 foreach($result as $row)
 {
  $sub_array = array();
- $sub_array[] = $row["OrderId"];
- $sub_array[] = $row["Coffee"];
- $sub_array[] = $row["OrderDate"];
- $sub_array[] = '<button type="button" name="view" id="'.$row["OrderId"].'"  class="btn btn-primary btn-xs view">View</button>';
- $sub_array[] = '<button type="button" name="delete" id="'.$row["OrderId"].'" class="btn btn-danger btn-xs delete">Delete</button>';
+ $sub_array[] = $row["orderId"];
+ $sub_array[] = $row["coffee"];
+ $sub_array[] = $row["orderDate"];
+ $sub_array[] = '<button type="button" name="view" orderId="'.$row["orderId"].'"  class="btn btn-primary btn-xs view">View</button>';
+ $sub_array[] = '<button type="button" name="delete" orderId="'.$row["orderId"].'" class="btn btn-danger btn-xs delete">Delete</button>';
  $data[] = $sub_array;
 }
 
 function get_total_all_records($connect)
 {
- $statement = $connect->prepare("SELECT orders.orderId as OrderId, coffee.name as Coffee, orders.orderDate as OrderDate 
+ $statement = $connect->prepare("SELECT orders.orderId as orderId, coffee.name as coffee, orders.orderDate as orderDate 
  FROM orders JOIN coffee ON orders.coffeeId = coffee.coffeeId");
  $statement->execute();
  $result = $statement->fetchAll();

@@ -199,27 +199,27 @@ $(document).ready(function(){
  });
 
 
-//  //Delete
-//  $(document).on('click', '.delete', function(){
-//   var idcoffee = $(this).attr('idcoffee');
-//   Dialogify.confirm("<h3 class='text-danger'><b>Are you sure you want to remove this data?</b></h3>", {
-//    ok:function(){
-//     $.ajax({
-//      url:"sql/delete_data.php",
-//      method:"POST",
-//      data:{idcoffee:idcoffee},
-//      success:function(data)
-//      {
-//       Dialogify.alert('<h3 class="text-success text-center"><b>Data has been deleted</b></h3>');
-//       dataTable.ajax.reload();
-//      }
-//     })
-//    },
-//    cancel:function(){
-//     this.close();
-//    }
-//   });
-//  });
+ //Delete
+ $(document).on('click', '.delete', function(){
+  var orderId = $(this).attr('orderId');
+  Dialogify.confirm("<h3 class='text-danger'><b>Are you sure you want to remove this data?</b></h3>", {
+   ok:function(){
+    $.ajax({
+     url:"sql/delete_data.php",
+     method:"POST",
+     data:{orderId:orderId},
+     success:function(data)
+     {
+      Dialogify.alert('<h3 class="text-success text-center"><b>Data has been deleted</b></h3>');
+      dataTable.ajax.reload();
+     }
+    })
+   },
+   cancel:function(){
+    this.close();
+   }
+  });
+ });
  
  
  });

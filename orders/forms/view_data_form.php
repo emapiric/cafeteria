@@ -1,5 +1,5 @@
 <div class="form-group">
- <label>Coffee ID:</label>
+ <label>Coffee:</label>
 </div>
 <div class="form-group">
     <label id="coffee"><i>Test</i></label>
@@ -8,7 +8,7 @@
  <label>Order date:</label>
 </div>
 <div class="form-group">
-    <label id="user"><i>Test</i></label>
+    <label id="orderDate"><i>Test</i></label>
 </div>
 
 
@@ -16,7 +16,7 @@
  $(document).ready(function () {
 
   document.getElementById('coffee').innerHTML =localStorage.getItem('coffee');
-  document.getElementById('orderdate').innerHTML =localStorage.getItem('orderdate');
+  document.getElementById('orderDate').innerHTML =localStorage.getItem('orderDate');
 
  });
 </script>

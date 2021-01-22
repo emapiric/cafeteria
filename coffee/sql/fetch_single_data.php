@@ -12,9 +12,9 @@ if(isset($_POST["id"]))
  $statement->execute();
  $row = $statement->fetch(PDO::FETCH_ASSOC);
  $coffee = new Coffee();
- $coffee->setTitle($row['name']);
- $coffee->setAuthor($row['description']);
- $coffee->setYear($row['price']);
+ $coffee->setName($row['name']);
+ $coffee->setDescription($row['description']);
+ $coffee->setPrice($row['price']);
 
  echo json_encode($coffee);
 }

@@ -17,9 +17,9 @@ if(isset($_POST["orderId"]))
  $statement->execute();
  $row = $statement->fetch(PDO::FETCH_ASSOC);
  $order = new Orders();
- $order->setOrderId($row['Order']);
- $order->setCoffeeId($row['Coffee']);
- $order->setOrderDate($row['OrderDate']);
+ $order->setOrderId($row['orderId']);
+ $order->setCoffeeId($row['coffee']);
+ $order->setOrderDate($row['orderDate']);
  
  echo json_encode($order);
 }
