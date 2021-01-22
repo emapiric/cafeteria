@@ -1,8 +1,8 @@
 <?php
 
 
-include('../../database_connection.php');
-include('../../model/orders.php');
+include('../database_connection.php');
+include('../model/orders.php');
 
 if(isset($_POST["orderId"]))
 {

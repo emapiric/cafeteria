@@ -1,7 +1,7 @@
 <?php
 
-include('../../database_connection.php');
-include('../../model/coffee.php');
+include('../database_connection.php');
+include('../model/coffee.php');
 
 if(isset($_POST["id"]))
 {

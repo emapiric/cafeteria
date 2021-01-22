@@ -30,7 +30,7 @@
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav pull-right">
         <li><a href="..">Home</a></li>
-        <li><a href="../coffee/coffeePage.php">Coffee</a></li>
+        <li><a href="coffeePage.php">Coffee</a></li>
         <li class="active"><a href="#">Orders</a></li>
       </ul>
     </div>
@@ -110,7 +110,7 @@ $(document).ready(function(){
   "serverSide":true,
   "order":[],
   "ajax":{
-   url:"sql/fetch.php",
+   url:"../sql/get_orders.php",
    type:"POST"
   },
   "columnDefs":[
@@ -125,7 +125,7 @@ $(document).ready(function(){
  $(document).on('click', '.view', function(){
     var orderId = $(this).attr('orderId');
   $.ajax({
-   url:"sql/fetch_single_data.php",
+   url:"../sql/get_order_by_id.php",
    method:"POST",
    data:{orderId:orderId},
    dataType:'json',
@@ -136,7 +136,7 @@ $(document).ready(function(){
     var options = {
      ajaxPrefix:''
     };
-    new Dialogify('forms/view_data_form.php', options)
+    new Dialogify('../forms/view_order_form.php', options)
      .title('Coffee Data')
      .buttons([
       {
@@ -155,7 +155,7 @@ $(document).ready(function(){
   var options = {
    ajaxPrefix:''
   };
-  new Dialogify('forms/add_data_form.php', options)
+  new Dialogify('../forms/add_order_form.php', options)
    .title('Add New Order')
    .buttons([
     {
@@ -174,7 +174,7 @@ $(document).ready(function(){
       form_data.append('orderDate', $('#orderDate').val());
       $.ajax({
        method:"POST",
-       url:'sql/insert_data.php',
+       url:'../sql/add_order.php',
        data:form_data,
        dataType:'json',
        contentType:false,
@@ -205,7 +205,7 @@ $(document).ready(function(){
   Dialogify.confirm("<h3 class='text-danger'><b>Are you sure you want to remove this data?</b></h3>", {
    ok:function(){
     $.ajax({
-     url:"sql/delete_data.php",
+     url:"../sql/delete_order.php",
      method:"POST",
      data:{orderId:orderId},
      success:function(data)

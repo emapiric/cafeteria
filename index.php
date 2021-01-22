@@ -28,10 +28,10 @@
                     <a class="nav-link" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="coffee/coffeePage.php">Coffee</a>
+                    <a class="nav-link" href="pages/coffeePage.php">Coffee</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="orders/ordersPage.php">Orders</a>
+                    <a class="nav-link" href="pages/ordersPage.php">Orders</a>
                 </li>
             </ul>
         </div>

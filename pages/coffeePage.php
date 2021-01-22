@@ -31,7 +31,7 @@
       <ul class="nav navbar-nav pull-right">
         <li><a href="..">Home</a></li>
         <li><a href="#">Coffee</a></li>
-        <li class="active"><a href="../orders/ordersPage.php">Orders</a></li>
+        <li class="active"><a href="ordersPage.php">Orders</a></li>
       </ul>
     </div>
   </div>
@@ -112,7 +112,7 @@ $(document).ready(function(){
   "serverSide":true,
   "order":[],
   "ajax":{
-   url:"sql/fetch.php",
+   url:"../sql/get_coffees.php",
    type:"POST"
   },
   "columnDefs":[
@@ -127,7 +127,7 @@ $(document).ready(function(){
  $(document).on('click', '.view', function(){
     var id = $(this).attr('id');
   $.ajax({
-   url:"sql/fetch_single_data.php",
+   url:"../sql/get_coffee_by_id.php",
    method:"POST",
    data:{id:id},
    dataType:'json',
@@ -139,7 +139,7 @@ $(document).ready(function(){
     var options = {
      ajaxPrefix:''
     };
-    new Dialogify('forms/view_data_form.php', options)
+    new Dialogify('../forms/view_coffee_form.php', options)
      .title('Coffee Data')
      .buttons([
       {
@@ -158,7 +158,7 @@ $(document).ready(function(){
   var options = {
    ajaxPrefix:''
   };
-  new Dialogify('forms/add_data_form.php', options)
+  new Dialogify('../forms/add_coffee_form.php', options)
    .title('Add New Coffee')
    .buttons([
     {
@@ -181,7 +181,7 @@ $(document).ready(function(){
       form_data.append('price', $('#price').val());
       $.ajax({
        method:"POST",
-       url:'sql/insert_data.php',
+       url:'../sql/add_coffee.php',
        data:form_data,
        dataType:'json',
        contentType:false,
@@ -208,7 +208,7 @@ $(document).ready(function(){
  $(document).on('click', '.update', function(){
   var id = $(this).attr('id');
   $.ajax({
-   url:"sql/fetch_single_data.php",
+   url:"../sql/get_coffee_by_id.php",
    method:"POST",
    data:{id:id},
    dataType:'json',
@@ -221,7 +221,7 @@ $(document).ready(function(){
     var options = {
      ajaxPrefix:''
     };
-    new Dialogify('forms/edit_data_form.php', options)
+    new Dialogify('../forms/edit_coffee_form.php', options)
      .title('Edit Coffee Data')
      .buttons([
       {
@@ -242,7 +242,7 @@ $(document).ready(function(){
         form_data.append('id', id);
         $.ajax({
          method:"POST",
-         url:'sql/update_data.php',
+         url:'../sql/update_coffee.php',
          data:form_data,
          dataType:'json',
          contentType:false,
@@ -273,7 +273,7 @@ $(document).ready(function(){
   Dialogify.confirm("<h3 class='text-danger'><b>Are you sure you want to remove this data?</b></h3>", {
    ok:function(){
     $.ajax({
-     url:"sql/delete_data.php",
+     url:"../sql/delete_coffee.php",
      method:"POST",
      data:{id:id},
      success:function(data)
