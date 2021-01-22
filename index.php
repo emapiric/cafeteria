@@ -17,13 +17,10 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+    <nav class="navbar navbar-expand-md navbar-dark sticky-top">
     <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-        <span class="navbar-toggler-icon"></span>
-        </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
+            <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Home</a>
                 </li>
@@ -38,39 +35,10 @@
     </div>
     </nav>
 
-    <div id="slides" class="carousel slide" data-ride="carousel">
-        <ul class="carousel-indicators">
-            <li data-target="#slides" data-slide-to="0" class="active"></li>
-            <li data-target="#slides" data-slide-to="1"></li>
-            <li data-target="#slides" data-slide-to="2"></li>
-        </ul>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="img/cafeteria.jpg" alt="Cafeteria">
-                <div class="carousel-caption">
-                <h1 class="display-2">Hearts Cafeteria</h1>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="img/coffee-machine.jpg" alt="Coffee machine">
-                <div class="carousel-caption">
-                <h1 class="display-2">Hearts Cafeteria</h1>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="img/coffee.jpg" alt="Coffee">
-                <div class="carousel-caption">
-                <h1 class="display-2">Hearts Cafeteria</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
     <div class="container-fluid padding">
         <div class="row welcome text-center">
             <div class="col-12">
-                <h1 class="display-4">About us</h1>
+                <h1 class="display-4">Cafeteria</h1>
             </div>
             <hr>
             <div class="col-12">
@@ -81,26 +49,30 @@
         </div>
     </div>
 
-
-    <hr class="my-4">
-    <figure>
-        <div class="fixed-wrap">
-            <div id="fixed"></div>
+    <div id="slides" class="carousel slide" data-ride="carousel">
+        <ul class="carousel-indicators">
+            <li data-target="#slides" data-slide-to="0" class="active"></li>
+            <li data-target="#slides" data-slide-to="1"></li>
+            <li data-target="#slides" data-slide-to="2"></li>
+        </ul>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/cafeteria.jpg" alt="Cafeteria">>
+            </div>
+            <div class="carousel-item">
+                <img src="img/coffee-machine.jpg" alt="Coffee machine">
+            </div>
+            <div class="carousel-item">
+                <img src="img/coffee.jpg" alt="Coffee">
+            </div>
         </div>
-    </figure>
+    </div>
 
 
     <footer>
 
         <div class="container-fluid padding">
             <div class="row text-center">
-                <div class="col-md-6">
-                    <hr class="light">
-                    <p>Contact: +123456789</p>
-                    <p>heartscafeteria@gmail.com</p> 
-                    <p>Kneza Mihaila 11</p>
-                    <p>Belgrade, Serbia</p>
-                </div>
                 <div class="col-md-6">                   
                     <hr class="light">
                     <h5>Opening hours</h5>
@@ -108,6 +80,14 @@
                     <p>Working days: 7am - 8pm</p>
                     <p>Weekends: 8am - 6pm</p>
                 </div>
+                <div class="col-md-6">
+                    <hr class="light">
+                    <p>Contact: +123456789</p>
+                    <p>heartscafeteria@gmail.com</p> 
+                    <p>Kneza Mihaila 11</p>
+                    <p>Belgrade, Serbia</p>
+                </div>
+                
             </div>
         </div>
 

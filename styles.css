@@ -6,11 +6,20 @@ body {
   width: 100%;
   font-family: "Poppins", sans-serif;
   color: rgb(56, 7, 7);
+  background-color: #ead2ba;
 }
 
 .navbar {
   padding: 0.7rem;
+  background-color: #301c09;
+  margin: 0 auto;
+ 
 }
+
+.navbar-nav ul {
+  padding-right: 20px;
+}
+
 .navbar-nav li {
   padding-right: 20px;
 }
@@ -23,25 +32,14 @@ body {
   height: 100%;
 }
 
-.carousel-caption {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.carousel-caption h1 {
-  font-size: 500%;
-  text-transform: uppercase;
-  text-shadow: 1px 1px 15px #000;
-}
 
 .btn-primary {
-  background-color: #6648b1;
-  border: 1px solid #6648b1;
+  background-color: #72e4c2;
+  border: 1px solid #72e4c2;
 }
 .btn-primary:hover {
-  background-color: #563d7c;
-  border: 1px solid #563d7c;
+  background-color: #55ac92;
+  border: 1px solid #55ac92;
 }
 
 .padding {
@@ -55,30 +53,30 @@ body {
 }
 
 .welcome hr {
-  border-top: 2px solid #b4b4b4;
+  border-top: 2px solid #301c09;
   width: 95%;
   margin-top: 0.3rem;
   margin-bottom: 1rem;
 }
 
 footer {
-  background-color: #1b1b1d !important;
-  color: #d5d5d5;
+  background-color: #301c09 !important;
+  color: #ffffff;
   padding-top: 2rem;
 }
 
 hr.light {
-  border-top: 1px solid #d5d5d5;
+  border-top: 1px solid #ffffff;
   width: 75%;
   margin-top: 0.8rem;
   margin-bottom: 1rem;
 }
 
 footer a {
-  color: #d5d5d5;
+  color: #ffffff;
 }
 hr.light-100 {
-  border-top: 1px solid #d5d5d5;
+  border-top: 1px solid #ffffff;
   width: 100%;
   margin-top: 0.8rem;
   margin-bottom: 1rem;
@@ -87,25 +85,12 @@ hr.light-100 {
 @media (max-width: 992px) {
 }
 @media (max-width: 768px) {
-  .carousel-caption {
-    top: 45%;
-  }
-
-  .carousel-caption h1 {
-    font-size: 350%;
-  }
 
   .display-4 {
     font-size: 200%;
   }
 }
 @media (max-width: 576px) {
-  .carousel-caption {
-    top: 40%;
-  }
-  .carousel-caption h1 {
-    font-size: 250%;
-  }
   .carousel-indicators {
     display: none;
   }
@@ -137,6 +122,13 @@ figure {
   height: 100%;
 }
 
+.container-background{
+  margin-top: 8rem;
+  background-image: url(img/coffee-bg2.jpg) !important;
+  width: 100%;
+}
+
+
 #fixed {
   background-image: url(img/coffee-plakat.jpg) !important;
   position: fixed;
@@ -159,3 +151,9 @@ figure {
 .col-12 {
   text-align: center;
 }
+
+h1 {
+  font-weight: bold;
+}
+
+

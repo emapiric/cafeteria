@@ -19,14 +19,7 @@
 
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="containerNavbar" colour="red">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
+  <div class="containerNavbar">
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav pull-right">
         <li><a href="..">Home</a></li>
@@ -38,67 +31,69 @@
 </nav>
 
   <div class="container-fluid padding">
-    <div class="container">
-    <br>
-    <br>
-    <br>
-    <h1>Coffee Menu</h1>
-    <br>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-      <div class="row">
-        <div class="col-md-6">
-        <h3 class="panel-title">Our offer</h3>
-        </div>
-        <div class="col-md-6" align="right">
-        <button type="button" name="add_data" id="add_data" class="btn btn-success btn-xs">Add</button>
-        </div>
+    <div class = "container-background">
+      <div class="container">
+      <br>
+      <br>
+      <br>
+      <h1>Coffee Menu</h1>
+      <br>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-md-6">
+                <h3 class="panel-title">Our offer</h3>
+              </div>
+              <div class="col-md-6" align="right">
+                <button type="button" name="add_data" id="add_data" class="btn btn-success btn-xs">Add</button>
+              </div>
+            </div>
+          </div>
+          <div class="panel-body">
+            <div class="table-responsive">
+              <span id="form_response"></span>
+              <table id="coffee_data" class="table table-bordered table-striped">
+                <thead>
+                  <tr>
+                  <td>Coffee ID</td>
+                  <td>Name</td>
+                  <td>Description</td>
+                  <td>Price</td>
+                  <td>View</td>
+                  <td>Edit</td>
+                  <td>Delete</td>
+                  </tr>
+                </thead>
+              </table>      
+            </div>
+          </div>
       </div>
-      </div>
-      <div class="panel-body">
-      <div class="table-responsive">
-        <span id="form_response"></span>
-        <table id="coffee_data" class="table table-bordered table-striped">
-        <thead>
-          <tr>
-          <td>Coffee ID</td>
-          <td>Name</td>
-          <td>Description</td>
-          <td>Price</td>
-          <td>View</td>
-          <td>Edit</td>
-          <td>Delete</td>
-          </tr>
-        </thead>
-        </table>      
-      </div>
-      </div>
-    </div>
     </div>
   </div>
+  </div>
+
+
 
   <footer>
-
-        <div class="container-fluid padding">
-            <div class="row text-center">
-                <div class="col-md-6">
-                    <hr class="light">
-                    <p>Contact: +123456789</p>
-                    <p>heartscafeteria@gmail.com</p> 
-                    <p>Kneza Mihaila 11</p>
-                    <p>Belgrade, Serbia</p>
-                </div>
-                <div class="col-md-6">                   
-                    <hr class="light">
-                    <h5>Opening hours</h5>
-                    <hr class="light">
-                    <p>Working days: 7am - 8pm</p>
-                    <p>Weekends: 8am - 6pm</p>
-                </div>
-            </div>
+    <div class="container-fluid padding">
+      <div class="row text-center">
+          <div class="col-md-6">                   
+              <hr class="light">
+              <h5>Opening hours</h5>
+              <hr class="light">
+              <p>Working days: 7am - 8pm</p>
+              <p>Weekends: 8am - 6pm</p>
+          </div>
+          <div class="col-md-6">
+              <hr class="light">
+              <p>Contact: +123456789</p>
+              <p>heartscafeteria@gmail.com</p> 
+              <p>Kneza Mihaila 11</p>
+              <p>Belgrade, Serbia</p>
+          </div>
         </div>
-
-    </footer>
+    </div>
+</footer>
 
 
  </body>
