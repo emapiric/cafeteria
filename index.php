@@ -43,7 +43,13 @@
             <hr>
             <div class="col-12">
                 <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+                Pre nego što dođe do vašeg stola, naša kafa prolazi dugačak put. Od plantaže u najudaljenijim krajevima sveta, preko ruku farmera i berača plodova, do prženja i najfinijeg mlevenja u našim mlinovima, a ipak, svaka šoljica znači tek jedan novi početak uživanja u danu pred nama.
+
+Iako veoma mlad brend, za manje od tri godine dokazanim kvalitetom i konstantnim inovacijama postali smo jedan od najbrže rastućih lanaca kafeterija u Srbiji, koji u svom asortimanu za sada nudi više od 15 jedinstvenih vrsta kafa sa svih strana sveta, među kojima su i veoma retki ukusi, ekskluzivni u ovom delu Evrope.
+
+Gosti Kafeterije se svakog jutra mogu razbuditi uz ukuse Indija ili Brazil espresa, poboljšati produktivnost uz ukuse Kolumbije, Kenije ili Etiopije, uživati u specijalno pripremljenim blendovima ili završiti dan uz bezkofeinske napitke.
+
+
                 </p>              
             </div>
         </div>
